@@ -4,5 +4,17 @@
 */
 
 module.exports = (req, res, next) => {
+  const { authorization } = req.headers;
+  if (authorization) {
+    jwt.verify(authorization, jwtSecret, (err, decodedToken) => {
+      if (err) {
   res.status(401).json({ you: 'shall not pass!' });
+} else {
+  req.decodedToken = decodedToken;
+  next();
+}
+})  
+} else {
+res.status(401).json({ message: "Buddy, you're missing the token"});
+}
 };
