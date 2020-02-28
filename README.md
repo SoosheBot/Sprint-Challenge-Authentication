@@ -39,12 +39,22 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
+Sessions provide a way to persist data across requests. You can use them to save authentication information, so there is no need to re-enter credentials on every new request the client makes to the server.
+
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+In order to store passwords in a secure manner, bcryptjs hashes the password with a salt (which is when you add additional random data to the input of a hashing function--which makes each password hash unique).
+
 
 - [ ] What does bcrypt do to slow down attackers?
+Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function that, over time, can have its iteration count increased to make it slower, so it remains resistant to brute-force search attacks.
+
 
 - [ ] What are the three parts of the JSON Web Token?
+The header.
+The payload.
+The signature.
+
 
 ## Minimum Viable Product
 

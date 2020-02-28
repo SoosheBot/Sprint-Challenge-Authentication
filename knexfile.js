@@ -9,4 +9,31 @@ module.exports = {
     },
     seeds: { directory: './database/seeds' },
   },
+  testing: {
+    client: 'sqlite3',
+    connection: "./database/auth.db3",
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: "./database/migrations",
+      tableName: 'knex_migrations'
+    }
+  },
+
+
+  production: {
+    client: 'sqlite3',
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: "./database/migrations",
+      tableName: 'knex_migrations'
+    }
+  }
+
 };
