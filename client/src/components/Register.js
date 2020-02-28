@@ -20,7 +20,7 @@ const Register = props => {
     console.log("thesignup", signup);
     return (
       axiosWithAuth()
-        .post("/auth/register", signup)
+        .post("/api/auth/register", signup)
         .then(res => {
           console.log("props", props);
           localStorage.setItem("token", res.data.token);
