@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: { filename: './database/auth.db3' },
     useNullAsDefault: true,
     migrations: {
@@ -10,8 +10,8 @@ module.exports = {
     seeds: { directory: './database/seeds' },
   },
   testing: {
-    client: 'sqlite3',
-    connection: "./database/auth.db",
+    client: 'pg',
+    connection: "./database/auth.db3",
     pool: {
       min: 2,
       max: 10
@@ -24,7 +24,7 @@ module.exports = {
 
 
   production: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
