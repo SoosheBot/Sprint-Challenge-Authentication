@@ -15,20 +15,7 @@ router.get("/", authenticate, (req,res) => {
     .catch(err => {
         res.status(500).json({error: "Could not get users."});
     });
-});
-
-// router.get("/:department", (req, res) => {
-//     let { department } = req.body;
-//     Users.findBy({ department })
-//       .first()
-//       .then(user => {
-//         res.status(201).json(user);
-//       })
-//       .catch(err => {
-//         res.status(500).json({ message: "Could not get users in this department"});
-//       });
-// });
-  
+});  
   
 
 // function departments(department) {
