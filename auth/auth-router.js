@@ -56,7 +56,7 @@ router.get("/logout", (req, res) => {
       }
     });
   } else {
-    res.status(200).json({ message: "Logout success." });
+    res.status(200).json({ message: "Logout success. For your security, please close this window." });
   }
 });
 
