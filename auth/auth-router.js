@@ -14,7 +14,7 @@ router.post("/register", (req,res) => {
 
     Users.add(user)
     .then(saved => {
-        if (user.username && user.password && user.department) {
+        if (user.username && user.password) {
             res.status(201).json(saved);
         } else {
             res.status(404).json({ message: "Did you include a username, password, and department?"})
@@ -60,9 +60,8 @@ router.get("/logout", (req,res) => {
 function generateToken(user) {
     const payload = {
         userId: user.id,
-        user: user.password,
-        // department: user.department || "admin"
-        department: user.department
+        username:user.username,
+        user: user.password
     };
 
     const options = {
